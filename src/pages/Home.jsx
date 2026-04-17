@@ -117,9 +117,9 @@ function Home() {
       </div>
 
       {/* ===== SCROLL INDICATOR ===== */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
+      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
 
-        <span className="text-xs uppercase tracking-widest text-gray-400 mb-5">
+        <span className="text-xs uppercase tracking-widest text-gray-400">
           Scroll
         </span>
 
@@ -134,7 +134,7 @@ function Home() {
                           transition-all duration-300
                           animate-bounce
                           group-hover:scale-110
-                          group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                          group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] mt-5">
 
             <FaChevronDown className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
           </div>
