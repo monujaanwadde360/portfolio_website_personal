@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react"
 import Typed from "typed.js"
-import Particles from "@tsparticles/react"
-import { FaChevronDown } from "react-icons/fa"
 
 function Home() {
   const typedRef = useRef(null)
@@ -10,9 +8,7 @@ function Home() {
     const typed = new Typed(typedRef.current, {
       strings: [
         "Full-Stack Developer",
-        "Cybersecurity Learner",
-        "IoT Developer",
-        "Problem Solver",
+        "Websites Developer",
       ],
       typeSpeed: 40,
       backSpeed: 30,
@@ -24,68 +20,63 @@ function Home() {
     return () => typed.destroy()
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-slate-100 overflow-hidden font-serif font-bold tracking-wide"
     >
-      {/* ===== Particles Background ===== */}
-      <Particles
-        id="tsparticles"
-        className="absolute inset-0"
-        options={{
-          background: { color: "transparent" },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 60 },
-            color: { value: "#ffffff" },
-            size: { value: 3 },
-            links: {
-              enable: true,
-              distance: 140,
-              color: "#22d3ee",
-              opacity: 0.2,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-            },
-          },
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-            },
-          },
-        }}
-      />
 
       {/* ===== Hero Content ===== */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
 
         {/* Small Intro */}
-        <div className="uppercase mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs text-gray-300">
-          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        <div
+          className="
+            uppercase
+            inline-flex
+            items-center
+            mt-8
+            mb-6
+            gap-2
+            px-5
+            py-2
+            rounded-full
+            border
+            border-black/10
+            bg-white/40
+            backdrop-blur-md
+            text-xs
+            shadow-sm
+          "
+        >
+          <span
+            className="
+              w-2
+              h-2
+              bg-green-500
+              rounded-full
+              animate-pulse
+            "
+          ></span>
+
           Welcome to My Portfolio
         </div>
 
         {/* Name */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-5
           bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 
           bg-clip-text text-transparent whitespace-nowrap">
           Monujaan Wadde
         </h1>
 
         {/* Dynamic Role */}
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+        <h2 className="text-2xl md:text-3xl mb-5">
           I'm a <span ref={typedRef} className="text-cyan-400"></span>
         </h2>
 
         {/* Description */}
-        <p className="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="max-w-3xl text-[20px]
+            md:text-[22px] mx-auto mb-10 leading-relaxed">
           I am a full-stack developer who enjoys building websites and working with new technologies.
           I also explore cybersecurity and IoT projects. I like solving real-world problems and
           creating simple, secure, and useful solutions.
@@ -115,32 +106,6 @@ function Home() {
         </div>
 
       </div>
-
-      {/* ===== SCROLL INDICATOR ===== */}
-      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
-
-        <span className="text-xs uppercase tracking-widest text-gray-400">
-          Scroll
-        </span>
-
-        <button
-          onClick={() => scrollToSection("about")}
-          className="cursor-pointer group"
-          aria-label="Scroll down"
-        >
-          <div className="p-3 rounded-full bg-white/5 backdrop-blur-sm 
-                          border border-white/10 
-                          group-hover:border-cyan-500/50 
-                          transition-all duration-300
-                          animate-bounce
-                          group-hover:scale-110
-                          group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] mt-5">
-
-            <FaChevronDown className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
-          </div>
-        </button>
-      </div>
-
     </section>
   )
 }
