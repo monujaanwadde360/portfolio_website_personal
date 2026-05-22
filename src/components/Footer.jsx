@@ -4,45 +4,97 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaGithub,
-} from "react-icons/fa"
+} from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="relative bg-black text-white pt-20 pb-10 px-6 overflow-hidden">
-
-      {/* Top Gradient Divider */}
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"></div>
-
+    <footer
+      className="
+        relative
+        bg-neutral-100
+        pt-20
+        pb-10
+        px-6
+        overflow-hidden
+        font-serif
+        font-bold
+      "
+    >
       <div className="max-w-7xl mx-auto">
 
-        {/* Main Grid */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        {/* ================= MAIN GRID ================= */}
+        <div className="grid md:grid-cols-3 gap-12 mb-14">
 
-          {/* Logo + About */}
+          {/* ================= LOGO + ABOUT ================= */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+
+            {/* LOGO */}
+            <div className="flex items-center gap-3 mb-5">
+
               <img
                 src="/images/logo.ico"
                 alt="logo"
-                className="w-10 h-10 rounded-full shadow-lg shadow-cyan-500/40"
+                className="
+                  w-11
+                  h-11
+                  rounded-full
+                  shadow-lg
+                  shadow-cyan-500/40
+                "
               />
-              <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+
+              <h3
+                className="
+                  text-2xl
+                  bg-gradient-to-r
+                  from-cyan-400
+                  to-purple-500
+                  bg-clip-text
+                  text-transparent
+                "
+              >
                 Monujaan Wadde
               </h3>
             </div>
 
-            <p className="text-gray-400 text-sm leading-relaxed">
-              I am a full-stack developer with an interest in cybersecurity and IoT.
-              I enjoy working on real-world projects and continuously improving my skills.
-              I focus on building simple, secure, and useful solutions.
+            {/* DESCRIPTION */}
+            <p
+              className="
+                text-gray-700
+                text-sm
+                leading-relaxed
+              "
+            >
+              I am a full-stack developer with an
+              interest in cybersecurity and IoT.
+              I enjoy building modern applications,
+              solving real-world problems, and
+              continuously improving my skills.
             </p>
           </div>
 
-          {/* Navigation Links */}
+          {/* ================= QUICK LINKS ================= */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-center">Quick Links</h4>
 
-            <ul className="space-y-3 text-gray-400 text-sm text-center">
+            <h4
+              className="
+                text-xl
+                mb-5
+                text-center
+                text-cyan-400
+              "
+            >
+              Quick Links
+            </h4>
+
+            <ul
+              className="
+                space-y-3
+                text-sm
+                text-center
+              "
+            >
+
               {[
                 "home",
                 "about",
@@ -52,79 +104,157 @@ function Footer() {
                 "contact",
               ].map((item) => (
                 <li key={item}>
+
                   <a
                     href={`#${item}`}
-                    className="hover:text-cyan-400 transition relative group"
+                    className="
+                      text-black
+                      hover:text-cyan-400
+                      transition
+                      relative
+                      inline-block
+                      group
+                    "
                   >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                    <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-cyan-400 transition-all group-hover:w-full"></span>
+                    {item.charAt(0).toUpperCase() +
+                      item.slice(1)}
+
+                    <span
+                      className="
+                        absolute
+                        left-0
+                        -bottom-1
+                        w-0
+                        h-[1px]
+                        bg-cyan-400
+                        transition-all
+                        duration-300
+                        group-hover:w-full
+                      "
+                    ></span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Social Links */}
-
+          {/* ================= SOCIAL LINKS ================= */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
 
-            <div className="flex space-x-4">
+            <h4
+              className="
+                text-xl
+                mb-5
+                text-grey-400
+              "
+            >
+              Follow Me
+            </h4>
+
+            <div className="flex gap-4 flex-wrap">
+
               {[
                 {
                   icon: FaFacebookF,
                   link: "https://facebook.com/yourusername",
                 },
+
                 {
                   icon: FaTwitter,
                   link: "https://twitter.com/yourusername",
                 },
+
                 {
                   icon: FaInstagram,
                   link: "https://instagram.com/yourusername",
                 },
+
                 {
                   icon: FaLinkedinIn,
                   link: "https://linkedin.com/in/yourusername",
                 },
+
                 {
                   icon: FaGithub,
                   link: "https://github.com/yourusername",
                 },
               ].map((item, index) => {
                 const Icon = item.icon;
+
                 return (
                   <a
                     key={index}
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-110 transition"
+                    className="
+                      w-11
+                      h-11
+                      flex
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-violet-500
+                      border
+                      border-black/10
+                      text-red-800
+                      hover:bg-gradient-to-r
+                      hover:from-cyan-500
+                      hover:to-purple-600
+                      hover:scale-110
+                      hover:shadow-lg
+                      hover:shadow-cyan-500/30
+                      transition-all
+                      duration-300
+                    "
                   >
-                    <Icon />
+                    <Icon className="text-sm" />
                   </a>
                 );
               })}
             </div>
           </div>
-
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-center text-gray-400 text-sm">
+        {/* ================= BOTTOM ================= */}
+        <div
+          className="
+            border-t
+            border-black/30
+            pt-6
+            flex
+            flex-col
+            md:flex-row
+            items-center
+            justify-center
+            text-sm
+          "
+        >
 
           <span>
-            © {new Date().getFullYear()} Monujaan Wadde. All rights reserved.
+            © {new Date().getFullYear()} Monujaan
+            Wadde. All rights reserved.
           </span>
-
         </div>
-
       </div>
 
-      {/* Background Glow */}
-      <div className="absolute -z-10 bottom-[-150px] left-[-150px] w-[400px] h-[400px] bg-purple-600 rounded-full blur-3xl opacity-10"></div>
+      {/* ================= GLOW ================= */}
+      <div
+        className="
+          absolute
+          -z-10
+          bottom-[-150px]
+          left-[-150px]
+          w-[400px]
+          h-[400px]
+          bg-purple-600
+          rounded-full
+          blur-3xl
+          opacity-10
+        "
+      ></div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
