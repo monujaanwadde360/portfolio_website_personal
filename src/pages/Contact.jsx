@@ -1,15 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
+
+import ContactInfoCard from "../components/ContactInfoCard";
+import SocialIcon from "../components/SocialIcon";
+
 import {
-  FaUser,
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaPhone,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa"
+  contactInfo,
+  socialLinks,
+} from "../data/contactData";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,185 +14,235 @@ function Contact() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [status, setStatus] = useState("")
+  const [status, setStatus] = useState("");
 
+  /* ================= HANDLE CHANGE ================= */
   const handleChange = (e) => {
     setFormData({
       ...formData,
+
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
+  /* ================= HANDLE SUBMIT ================= */
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    console.log(formData)
+    console.log(formData);
 
-    setStatus("Message sent successfully!")
+    setStatus("Message sent successfully!");
+
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
-    })
-  }
+    });
+  };
 
   return (
     <section
       id="contact"
-      className="relative bg-black text-white py-24 px-6 overflow-hidden"
+      className="
+        relative
+        bg-slate-100
+        py-24
+        px-6
+        overflow-hidden
+        font-serif
+        font-bold
+        tracking-wide
+      "
     >
-      {/* Glow Background */}
-      <div className="absolute -z-10 top-[-150px] right-[-150px] w-[400px] h-[400px] bg-cyan-500 rounded-full blur-3xl opacity-10"></div>
 
       <div className="max-w-7xl mx-auto">
 
-        {/* Premium Title */}
+        {/* ================= TITLE ================= */}
         <div className="flex items-center justify-center mb-16">
-          <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-cyan-400"></div>
-          <h2 className="mx-6 text-3xl sm:text-4xl md:text-5xl font-bold whitespace-nowrap bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+
+          <div
+            className="
+              h-[1px]
+              w-20
+              bg-gradient-to-r
+              from-transparent
+              to-cyan-400
+            "
+          ></div>
+
+          <h2
+            className="
+              mx-6
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              whitespace-nowrap
+              bg-gradient-to-r
+              from-cyan-500
+              to-purple-600
+              bg-clip-text
+              text-transparent
+            "
+          >
             Contact Me
           </h2>
-          <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-purple-500"></div>
+
+          <div
+            className="
+              h-[1px]
+              w-20
+              bg-gradient-to-l
+              from-transparent
+              to-purple-500
+            "
+          ></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
 
-          {/* LEFT SIDE */}
+          {/* ================= LEFT SIDE ================= */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4">
+
+            {/* HEADING */}
+            <h3 className="text-3xl font-semibold mb-5 text-black">
               Get in Touch
             </h3>
 
-            <p className="text-gray-400 mb-8">
-              Feel free to reach out for collaborations or inquiries.
-              I'm always open to new projects and ideas.
+            {/* DESCRIPTION */}
+            <p className="text-gray-700 mb-10 leading-relaxed">
+              Feel free to reach out for collaborations,
+              freelance work, or project discussions.
+              I'm always open to creative ideas and
+              meaningful opportunities.
             </p>
 
+            {/* CONTACT INFO */}
             <div className="space-y-6">
 
-              <div className="flex items-start space-x-4">
-                <FaUser className="text-cyan-400 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-400">Name</div>
-                  <div>Monujaan Wadde</div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <FaMapMarkerAlt className="text-purple-400 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-400">Address</div>
-                  <div>Narayanpur, Chhattisgarh, India</div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <FaEnvelope className="text-cyan-400 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-400">Email</div>
-                  <div>monujaanwadde360@gmail.com</div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <FaPhone className="text-purple-400 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-400">Phone</div>
-                  <div>+91 9999999999</div>
-                </div>
-              </div>
+              {contactInfo.map((item, index) => (
+                <ContactInfoCard
+                  key={index}
+                  item={item}
+                />
+              ))}
             </div>
 
-            {/* Social Links */}
-            <div className="flex space-x-4 mt-10">
-              {[
-                {
-                  title: "Facebook",
-                  icon: FaFacebookF,
-                  link: "https://facebook.com/yourusername",
-                },
-                {
-                  title: "Twitter",
-                  icon: FaTwitter,
-                  link: "https://twitter.com/yourusername",
-                },
-                {
-                  title: "Instagram",
-                  icon: FaInstagram,
-                  link: "https://instagram.com/yourusername",
-                },
-                {
-                  title: "LinkedIn",
-                  icon: FaLinkedinIn,
-                  link: "https://linkedin.com/in/yourusername",
-                },
-                {
-                  title: "GitHub",
-                  icon: FaGithub,
-                  link: "https://github.com/yourusername",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={index}
+            {/* ================= SOCIAL SECTION ================= */}
+            <div className="mt-15">
 
-                    href={item.link}
-                    title={item.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-110 transition"
-                  >
-                    <Icon />
-                  </a>
-                );
-              })}
+              {/* FOLLOW ME HEADING */}
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                  mb-7
+                  text-black
+                  font-serif
+                "
+              >
+                Follow Me
+              </h2>
+
+              {/* SOCIAL ICONS */}
+              <div className="flex gap-4 flex-wrap">
+
+                {socialLinks.map((item, index) => (
+                  <SocialIcon
+                    key={index}
+                    item={item}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE FORM */}
+          {/* ================= RIGHT SIDE ================= */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">
+
+            {/* FORM HEADING */}
+            <h3 className="text-3xl font-semibold mb-6 text-black">
               Message Me
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* FORM */}
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
 
+              {/* NAME + EMAIL */}
               <div className="grid sm:grid-cols-2 gap-6">
+
                 <input
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Name..."
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400"
+                  className="
+                    bg-white
+                    border
+                    border-black/10
+                    rounded-2xl
+                    px-5
+                    py-3
+                    text-black
+                    placeholder:text-gray-400
+                    focus:outline-none
+                    focus:border-cyan-400
+                  "
                 />
 
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Email..."
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400"
+                  className="
+                    bg-white
+                    border
+                    border-black/10
+                    rounded-2xl
+                    px-5
+                    py-3
+                    text-black
+                    placeholder:text-gray-400
+                    focus:outline-none
+                    focus:border-cyan-400
+                  "
                 />
               </div>
 
+              {/* SUBJECT */}
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder="Subject..."
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400"
+                className="
+                  w-full
+                  bg-white
+                  border
+                  border-black/10
+                  rounded-2xl
+                  px-5
+                  py-3
+                  text-black
+                  placeholder:text-gray-400
+                  focus:outline-none
+                  focus:border-cyan-400
+                "
               />
 
+              {/* MESSAGE */}
               <textarea
                 name="message"
                 placeholder="Message..."
@@ -203,41 +250,75 @@ function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400"
+                className="
+                  w-full
+                  bg-white
+                  border
+                  border-black/10
+                  rounded-2xl
+                  px-5
+                  py-3
+                  text-black
+                  placeholder:text-gray-400
+                  focus:outline-none
+                  focus:border-cyan-400
+                "
               ></textarea>
 
+              {/* BUTTON */}
               <button
                 type="submit"
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-105 transition"
+                className="
+                  px-7
+                  py-3
+                  rounded-full
+                  text-white
+                  bg-gradient-to-r
+                  from-cyan-500
+                  to-purple-600
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                  shadow-lg
+                  shadow-cyan-500/20
+                "
               >
                 Send Message
               </button>
 
+              {/* STATUS */}
               {status && (
-                <div className="text-green-400 text-sm mt-2">
+                <div className="text-green-500 text-sm">
                   {status}
                 </div>
               )}
             </form>
 
-            {/* India Map */}
-            <div className="mt-10 rounded-2xl overflow-hidden border border-white/10">
+            {/* ================= MAP ================= */}
+            <div
+              className="
+                mt-10
+                rounded-3xl
+                overflow-hidden
+                border
+                border-black/10
+                shadow-lg
+              "
+            >
               <iframe
                 src="https://www.google.com/maps?q=Narayanpur,Chhattisgarh,India&output=embed"
                 width="100%"
                 height="300"
                 loading="lazy"
                 title="Narayanpur India Map"
-                className="rounded-2xl"
+                className="rounded-3xl"
               ></iframe>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
