@@ -44,7 +44,6 @@ function Projects() {
       id="projects"
       className="
         relative
-        bg-neutral-50
         py-24
         px-6
         overflow-hidden
