@@ -22,22 +22,51 @@ function About() {
       className="
         py-24
         px-6
-        bg-indigo-100
         font-serif font-bold tracking-wide
       "
     >
       <div className="max-w-7xl mx-auto">
 
         {/* TITLE */}
+
         <div className="flex items-center justify-center mb-20">
 
-          <div className="h-[2px] w-16 bg-cyan-400"></div>
+          <div
+            className="
+              h-[1px]
+              w-20
+              bg-gradient-to-r
+              from-transparent
+              to-cyan-400
+            "
+          ></div>
 
-          <h2 className="mx-6 text-4xl md:text-5xl font-bold">
+          <h2
+            className="
+              mx-6
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              whitespace-nowrap
+              bg-gradient-to-r
+              from-cyan-400
+              to-purple-500
+              bg-clip-text
+              text-transparent
+            "
+          >
             About Me
           </h2>
 
-          <div className="h-[2px] w-16 bg-purple-500"></div>
+          <div
+            className="
+              h-[1px]
+              w-20
+              bg-gradient-to-l
+              from-transparent
+              to-purple-500
+            "
+          ></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-20 items-center">
@@ -107,10 +136,9 @@ function About() {
                     transition-all duration-300
                     border
 
-                    ${
-                      activeTab === tab
-                        ? "bg-blue-500 text-white border-grey"
-                        : "border-black/20 hover:bg-cyan-500 hover:text-white"
+                    ${activeTab === tab
+                      ? "bg-blue-500 text-white border-grey"
+                      : "border-black/20 hover:bg-cyan-500 hover:text-white"
                     }
                   `}
                 >
