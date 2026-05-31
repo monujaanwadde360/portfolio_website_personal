@@ -23,7 +23,7 @@ function Home() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-slate-100 overflow-hidden font-serif font-bold tracking-wide"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden font-serif font-bold tracking-wide"
     >
 
       {/* ===== Hero Content ===== */}
