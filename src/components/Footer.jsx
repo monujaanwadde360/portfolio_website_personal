@@ -11,7 +11,6 @@ function Footer() {
     <footer
       className="
         relative
-        bg-neutral-100
         pt-20
         pb-10
         px-6
