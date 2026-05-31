@@ -36,7 +36,6 @@ function Skills() {
       ref={sectionRef}
       className="
         relative
-        bg-purple-100
         py-24
         px-6
         overflow-hidden
