@@ -7,8 +7,8 @@ function ServiceCard({ service }) {
         p-6
         rounded-3xl
         border
-        border-black/15
-        bg-white
+        border-white/40
+        bg-white/40
         hover:border-cyan-400/40
         hover:shadow-xl
         hover:shadow-cyan-500/10
