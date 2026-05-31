@@ -3,3 +3,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+section{
+  background-color: #edefff;
+}
+
+footer{
+  background-color: #e4e6ff;
+}
