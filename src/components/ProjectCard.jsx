@@ -9,9 +9,9 @@ function ProjectCard({ project }) {
       className="
         rounded-3xl
         overflow-hidden
-        bg-white/5
+        bg-white/40
         border
-        border-white/10
+        border-white/40
         hover:border-cyan-400/40
         hover:shadow-lg
         hover:shadow-cyan-500/20
@@ -68,7 +68,7 @@ function ProjectCard({ project }) {
         {/* DESCRIPTION */}
         <p
           className="
-            text-gray-400
+            text-black/70
             text-sm
             leading-relaxed
             mb-5
