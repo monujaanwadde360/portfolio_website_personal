@@ -9,7 +9,7 @@ function ContactInfoCard({ item }) {
           w-11
           h-11
           rounded-full
-          bg-white/5
+          bg-white/80
           border
           border-white/10
           flex
