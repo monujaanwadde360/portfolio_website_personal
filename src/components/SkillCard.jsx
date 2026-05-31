@@ -8,7 +8,7 @@ function SkillCard({ skill, animate }) {
         rounded-3xl
         bg-white/40
         border
-        border-white/10
+        border-white/40
         hover:border-cyan-400/40
         hover:shadow-lg
         hover:shadow-cyan-500/20
