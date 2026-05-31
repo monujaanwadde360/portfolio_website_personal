@@ -7,7 +7,6 @@ function Services() {
       id="services"
       className="
         relative
-        bg-violet-50
         py-24
         px-6
         overflow-hidden
